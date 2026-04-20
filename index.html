@@ -1,1 +1,34 @@
-asfa
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Form - CrootJS</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="card">
+    <h2 id="formTitle">Login</h2>
+
+    <div class="form-group">
+      <input type="text" id="email" placeholder="Masukkan Email">
+    </div>
+
+    <div class="form-group">
+      <input type="password" id="password" placeholder="Masukkan Password">
+    </div>
+
+    <button id="submitBtn">Login</button>
+
+    <p id="toggleText">
+      Belum punya akun?
+      <span id="toggleForm" class="link">Daftar</span>
+    </p>
+
+    <p id="message"></p>
+  </div>
+
+  <script type="module" src="app.js"></script>
+
+</body>
+</html>
