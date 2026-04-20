@@ -1,26 +1,20 @@
-onClick("loginBtn", () => {
-  const email = getValue("email").trim();
-  const password = getValue("password").trim();
+document.addEventListener("DOMContentLoaded", () => {
 
-  // validasi kosong
-  if (!email || !password) {
-    setInner("message", "❌ Semua field wajib diisi");
-    return;
-  }
+  onClick("loginBtn", () => {
+    const email = getValue("email").trim();
+    const password = getValue("password").trim();
 
-  // login simulasi
-  if (email === "admin@gmail.com" && password === "12345") {
-    setInner("message", "✅ Login berhasil");
+    if (!email || !password) {
+      setInner("message", "❌ Semua field wajib diisi");
+      return;
+    }
 
-    // simpan login
-    localStorage.setItem("user", email);
+    if (email === "admin@gmail.com" && password === "12345") {
+      setInner("message", "✅ Login berhasil");
+      localStorage.setItem("user", email);
+    } else {
+      setInner("message", "❌ Email atau password salah");
+    }
+  });
 
-    // redirect (opsional)
-    setTimeout(() => {
-      window.location.href = "dashboard.html";
-    }, 1000);
-
-  } else {
-    setInner("message", "❌ Email atau password salah");
-  }
 });
