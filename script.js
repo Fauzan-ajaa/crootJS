@@ -1,8 +1,9 @@
 onClick("loginBtn", () => {
-  const email = getValue("email");
-  const password = getValue("password");
+  const email = getValue("email").trim();
+  const password = getValue("password").trim();
 
-  if (email === "" || password === "") {
+  // validasi kosong
+  if (!email || !password) {
     setInner("message", "❌ Semua field wajib diisi");
     return;
   }
@@ -16,7 +17,7 @@ onClick("loginBtn", () => {
 
     // redirect (opsional)
     setTimeout(() => {
-      alert("Masuk ke dashboard (belum dibuat 😄)");
+      window.location.href = "dashboard.html";
     }, 1000);
 
   } else {
